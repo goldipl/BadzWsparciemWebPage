@@ -144,7 +144,7 @@
         
         .header {
             height: 100vh;
-            background: url("../background1.png");
+            background: url("/img/background1.png");
             background-position: center top;
             background-size: 100% auto;
             color: white;
@@ -152,7 +152,7 @@
         
         .header02 {
             height: 100vh;
-            background: url("../background2.png");
+            background: url("/img/background2.png");
             background-position: center top;
             background-size: 100% auto;
             color: white;
