@@ -262,8 +262,8 @@
         
         .burgerMenu {
             position: fixed;
-            top: 40px;
-            right: 40px;
+            top: 16px;
+            right: 20px;
             font-size: 40px;
             line-height: 50px;
             transition: .3s linear;
