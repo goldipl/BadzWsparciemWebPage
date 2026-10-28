@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  /* Granat – tekst i ciemne sekcje */
+  --color-ink-950: #061127;
+  --color-ink-900: #0b1d3a;
+  --color-ink-800: #132b52;
+  --color-ink-700: #2a4167;
+  --color-ink-600: #4a5f80;
+  --color-ink-500: #6b7d99;
+
+  /* Niebieski – kolor główny */
+  --color-brand-50: #eef5ff;
+  --color-brand-100: #d9e8ff;
+  --color-brand-200: #bcd7ff;
+  --color-brand-300: #8ebdff;
+  --color-brand-400: #5998ff;
+  --color-brand-500: #3374fb;
+  --color-brand-600: #1d56f0;
+  --color-brand-700: #1642d6;
+  --color-brand-800: #1936ad;
+
+  /* Błękit */
+  --color-sky-soft: #e8f6fd;
+
+  /* Zieleń – akcent */
+  --color-mint-50: #ecfdf6;
+  --color-mint-100: #d1faea;
+  --color-mint-300: #6ee7bf;
+  --color-mint-400: #34d3a0;
+  --color-mint-500: #10b985;
+  --color-mint-600: #059669;
+  --color-mint-700: #047857;
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-[#f7fbff] font-sans text-ink-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-extrabold tracking-tight text-ink-900;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  strong {
+    @apply font-semibold text-ink-900;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-ink-900;
+  }
+
+  :focus-visible {
+    @apply rounded-md outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+@utility text-gradient {
+  @apply bg-linear-to-r from-brand-600 via-sky-500 to-mint-500 bg-clip-text text-transparent;
+}
+
+@utility bg-brand-gradient {
+  @apply bg-linear-to-br from-brand-600 via-sky-500 to-mint-500;
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+@utility card {
+  @apply rounded-3xl border border-brand-100/80 bg-white shadow-[0_1px_2px_rgb(11_29_58/0.04),0_8px_24px_-12px_rgb(11_29_58/0.12)];
+}
+
+@utility bullets {
+  @apply space-y-3;
+
+  & > li {
+    @apply relative pl-5;
+  }
+
+  & > li::before {
+    @apply absolute top-2.5 left-0 size-1.5 rounded-full bg-mint-500 content-[''];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
